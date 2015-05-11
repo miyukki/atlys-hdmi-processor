@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator_isim_beh1.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="colorbar_generator" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="32" />
+   <wvobject fp_name="/colorbar_generator/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/hsync" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/vsync" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/de" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">de</obj_property>
+      <obj_property name="ObjectShortName">de</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/blue" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">blue[7:0]</obj_property>
+      <obj_property name="ObjectShortName">blue[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/green" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">green[7:0]</obj_property>
+      <obj_property name="ObjectShortName">green[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/red" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">red[7:0]</obj_property>
+      <obj_property name="ObjectShortName">red[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/hpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">hpos[11:0]</obj_property>
+      <obj_property name="ObjectShortName">hpos[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/vpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vpos[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vpos[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/TRUE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TRUE</obj_property>
+      <obj_property name="ObjectShortName">TRUE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/FALSE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FALSE</obj_property>
+      <obj_property name="ObjectShortName">FALSE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/H_ACTIVE_PIXEL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">H_ACTIVE_PIXEL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_ACTIVE_PIXEL[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/H_FPORCH_PIXEL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">H_FPORCH_PIXEL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_FPORCH_PIXEL[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/H_SYNC_PIXEL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">H_SYNC_PIXEL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_SYNC_PIXEL[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/H_BPORCH_PIXEL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">H_BPORCH_PIXEL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_BPORCH_PIXEL[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/H_LIMIT_PIXEL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">H_LIMIT_PIXEL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_LIMIT_PIXEL[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_ACTIVE_LINE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_ACTIVE_LINE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_ACTIVE_LINE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_FPORCH_LINE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_FPORCH_LINE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_FPORCH_LINE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_SYNC_LINE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_SYNC_LINE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_SYNC_LINE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_BPORCH_LINE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_BPORCH_LINE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_BPORCH_LINE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_LIMIT_LINE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_LIMIT_LINE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_LIMIT_LINE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_100" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_100[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_100[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_75" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_75[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_75[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_40" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_40[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_40[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_15" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_15[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_15[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_4" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_4[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/LVL_0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LVL_0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LVL_0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_PART_LINE_1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_PART_LINE_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_PART_LINE_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_PART_LINE_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_PART_LINE_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_PART_LINE_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/colorbar_generator/V_PART_LINE_3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">V_PART_LINE_3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_PART_LINE_3[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,971 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/ipcore_dir/dcm.v" into library work
+Parsing module <dcm>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/common/DRAM16XN.v" into library work
+Parsing module <DRAM16XN>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/tx/serdes_n_to_1.v" into library work
+Parsing module <serdes_n_to_1>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/tx/encode.v" into library work
+Parsing module <encode>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/tx/convert_30to15_fifo.v" into library work
+Parsing module <convert_30to15_fifo>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/video_generator.v" into library work
+Parsing module <video_generator>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/tx/tmds_tx.v" into library work
+Parsing module <tmds_tx>.
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" into library work
+Parsing module <colorbar_generator>.
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 106. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 107. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 108. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 109. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 110. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 111. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 112. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 117. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 118. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+INFO:HDLCompiler:693 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 119. parameter declaration becomes local in colorbar_generator with formal parameter declaration list
+Analyzing Verilog file "/media/psf/Home/Develop/atlys-hdmi-processor/main.v" into library work
+Parsing module <main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <main>.
+
+Elaborating module <dcm>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=2,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "/media/psf/Home/Develop/atlys-hdmi-processor/ipcore_dir/dcm.v" Line 128: Assignment to locked_int ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/media/psf/Home/Develop/atlys-hdmi-processor/ipcore_dir/dcm.v" Line 129: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <colorbar_generator>.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 262: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v" Line 265: Result of 12-bit expression is truncated to fit in 11-bit target.
+
+Elaborating module <video_generator>.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/atlys-hdmi-processor/video_generator.v" Line 119: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/atlys-hdmi-processor/video_generator.v" Line 122: Result of 12-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/media/psf/Home/Develop/atlys-hdmi-processor/video_generator.v" Line 125: Result of 13-bit expression is truncated to fit in 12-bit target.
+
+Elaborating module <tmds_tx>.
+
+Elaborating module <convert_30to15_fifo>.
+
+Elaborating module <FDC>.
+
+Elaborating module <DRAM16XN(data_width=30)>.
+
+Elaborating module <RAM16X1D>.
+
+Elaborating module <FDP>.
+
+Elaborating module <FD>.
+
+Elaborating module <FDR>.
+
+Elaborating module <FDRE>.
+
+Elaborating module <FDE>.
+
+Elaborating module <PLL_BASE(CLKIN_PERIOD=13,CLKFBOUT_MULT=10,CLKOUT0_DIVIDE=1,CLKOUT1_DIVIDE=10,CLKOUT2_DIVIDE=5,COMPENSATION="INTERNAL")>.
+WARNING:HDLCompiler:1127 - "/media/psf/Home/Develop/atlys-hdmi-processor/tx/tmds_tx.v" Line 66: Assignment to pllclk1 ignored, since the identifier is never used
+
+Elaborating module <BUFPLL(DIVIDE=5)>.
+
+Elaborating module <serdes_n_to_1(SF=5)>.
+
+Elaborating module <OSERDES2(DATA_WIDTH=5,DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",SERDES_MODE="MASTER",OUTPUT_MODE="DIFFERENTIAL")>.
+
+Elaborating module <OSERDES2(DATA_WIDTH=5,DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",SERDES_MODE="SLAVE",OUTPUT_MODE="DIFFERENTIAL")>.
+
+Elaborating module <OBUFDS>.
+
+Elaborating module <encode>.
+WARNING:HDLCompiler:634 - "/media/psf/Home/Develop/atlys-hdmi-processor/tx/tmds_tx.v" Line 197: Net <FALSE> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <main>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/main.v".
+        TRUE = 1'b1
+        FALSE = 1'b0
+    Summary:
+	inferred   6 Multiplexer(s).
+Unit <main> synthesized.
+
+Synthesizing Unit <dcm>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/ipcore_dir/dcm.v".
+    Summary:
+	no macro.
+Unit <dcm> synthesized.
+
+Synthesizing Unit <colorbar_generator>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v".
+        TRUE = 1'b1
+        FALSE = 1'b0
+        H_ACTIVE_PIXEL = 1920
+        H_FPORCH_PIXEL = 67
+        H_SYNC_PIXEL = 75
+        H_BPORCH_PIXEL = 205
+        H_LIMIT_PIXEL = 2267
+        V_ACTIVE_LINE = 1080
+        V_FPORCH_LINE = 3
+        V_SYNC_LINE = 5
+        V_BPORCH_LINE = 16
+        V_LIMIT_LINE = 1104
+    Found 1-bit register for signal <vsync>.
+    Found 1-bit register for signal <hsync>.
+    Found 8-bit register for signal <green>.
+    Found 8-bit register for signal <blue>.
+    Found 8-bit register for signal <red>.
+    Found 12-bit register for signal <hpos>.
+    Found 11-bit register for signal <vpos>.
+    Found 13-bit adder for signal <_n0075> created at line 262.
+    Found 12-bit adder for signal <_n0078> created at line 265.
+    Found 12-bit comparator greater for signal <GND_6_o_hpos[11]_LessThan_1_o> created at line 180
+    Found 11-bit comparator greater for signal <PWR_6_o_vpos[10]_LessThan_2_o> created at line 180
+    Found 11-bit comparator lessequal for signal <n0003> created at line 186
+    Found 11-bit comparator lessequal for signal <n0005> created at line 191
+    Found 11-bit comparator lessequal for signal <n0007> created at line 196
+    Found 12-bit comparator greater for signal <GND_6_o_hpos[11]_LessThan_20_o> created at line 238
+    Found 12-bit comparator lessequal for signal <n0022> created at line 238
+    Found 11-bit comparator greater for signal <PWR_6_o_vpos[10]_LessThan_22_o> created at line 253
+    Found 11-bit comparator lessequal for signal <n0027> created at line 253
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  49 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred   9 Multiplexer(s).
+Unit <colorbar_generator> synthesized.
+
+Synthesizing Unit <video_generator>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/video_generator.v".
+        TRUE = 1'b1
+        FALSE = 1'b0
+        H_ACTIVE_PIXEL = 1920
+        H_FPORCH_PIXEL = 67
+        H_SYNC_PIXEL = 75
+        H_BPORCH_PIXEL = 205
+        H_LIMIT_PIXEL = 2267
+        V_ACTIVE_LINE = 1080
+        V_FPORCH_LINE = 3
+        V_SYNC_LINE = 5
+        V_BPORCH_LINE = 16
+        V_LIMIT_LINE = 1104
+    Found 1-bit register for signal <de_out>.
+    Found 1-bit register for signal <hsync_out>.
+    Found 11-bit register for signal <vpos>.
+    Found 8-bit register for signal <r_out>.
+    Found 8-bit register for signal <g_out>.
+    Found 8-bit register for signal <b_out>.
+    Found 12-bit register for signal <hpos>.
+    Found 1-bit register for signal <vsync_out>.
+    Found 12-bit register for signal <lpos>.
+    Found 12-bit adder for signal <hpos[11]_GND_9_o_add_21_OUT> created at line 119.
+    Found 11-bit adder for signal <vpos[10]_GND_9_o_add_23_OUT> created at line 122.
+    Found 12-bit adder for signal <lpos[11]_GND_9_o_add_25_OUT> created at line 125.
+    Found 12-bit comparator greater for signal <hpos[11]_GND_9_o_LessThan_7_o> created at line 88
+    Found 11-bit comparator greater for signal <vpos[10]_PWR_7_o_LessThan_8_o> created at line 88
+    Found 12-bit comparator equal for signal <hpos[11]_lpos[11]_equal_9_o> created at line 89
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  62 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <video_generator> synthesized.
+
+Synthesizing Unit <tmds_tx>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/tx/tmds_tx.v".
+WARNING:Xst:653 - Signal <FALSE> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <clk_toggle>.
+    Found 5-bit register for signal <tmdsclkint>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <tmds_tx> synthesized.
+
+Synthesizing Unit <convert_30to15_fifo>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/tx/convert_30to15_fifo.v".
+        ADDR0 = 4'b0000
+        ADDR1 = 4'b0001
+        ADDR2 = 4'b0010
+        ADDR3 = 4'b0011
+        ADDR4 = 4'b0100
+        ADDR5 = 4'b0101
+        ADDR6 = 4'b0110
+        ADDR7 = 4'b0111
+        ADDR8 = 4'b1000
+        ADDR9 = 4'b1001
+        ADDR10 = 4'b1010
+        ADDR11 = 4'b1011
+        ADDR12 = 4'b1100
+        ADDR13 = 4'b1101
+        ADDR14 = 4'b1110
+        ADDR15 = 4'b1111
+    Set property "ASYNC_REG = TRUE" for instance <fdp_rst>.
+INFO:Xst:3210 - "/media/psf/Home/Develop/atlys-hdmi-processor/tx/convert_30to15_fifo.v" line 64: Output port <O_DATA_OUT> of the instance <fifo_u> is unconnected or connected to loadless signal.
+    Found 16x4-bit Read Only RAM for signal <wa_d>
+    Found 16x4-bit Read Only RAM for signal <ra_d>
+    Summary:
+	inferred   2 RAM(s).
+	inferred   1 Multiplexer(s).
+Unit <convert_30to15_fifo> synthesized.
+
+Synthesizing Unit <DRAM16XN>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/common/DRAM16XN.v".
+        data_width = 30
+    Summary:
+	no macro.
+Unit <DRAM16XN> synthesized.
+
+Synthesizing Unit <serdes_n_to_1>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/tx/serdes_n_to_1.v".
+        SF = 5
+    Summary:
+	no macro.
+Unit <serdes_n_to_1> synthesized.
+
+Synthesizing Unit <encode>.
+    Related source file is "/media/psf/Home/Develop/atlys-hdmi-processor/tx/encode.v".
+        CTRLTOKEN0 = 10'b1101010100
+        CTRLTOKEN1 = 10'b0010101011
+        CTRLTOKEN2 = 10'b0101010100
+        CTRLTOKEN3 = 10'b1010101011
+    Found 10-bit register for signal <dout>.
+    Found 5-bit register for signal <cnt>.
+    Found 8-bit register for signal <din_q>.
+    Found 4-bit register for signal <n1q_m>.
+    Found 4-bit register for signal <n0q_m>.
+    Found 1-bit register for signal <de_q>.
+    Found 1-bit register for signal <de_reg>.
+    Found 1-bit register for signal <c0_q>.
+    Found 1-bit register for signal <c0_reg>.
+    Found 1-bit register for signal <c1_q>.
+    Found 1-bit register for signal <c1_reg>.
+    Found 9-bit register for signal <q_m_reg>.
+    Found 4-bit register for signal <n1d>.
+    Found 4-bit subtractor for signal <PWR_24_o_BUS_0017_sub_29_OUT> created at line 110.
+    Found 5-bit subtractor for signal <n0233> created at line 169.
+    Found 5-bit subtractor for signal <n0235> created at line 175.
+    Found 5-bit subtractor for signal <n0236> created at line 175.
+    Found 2-bit adder for signal <n0183[1:0]> created at line 66.
+    Found 3-bit adder for signal <n0186[2:0]> created at line 66.
+    Found 2-bit adder for signal <n0204[1:0]> created at line 109.
+    Found 3-bit adder for signal <n0207[2:0]> created at line 109.
+    Found 5-bit adder for signal <n0232> created at line 169.
+    Found 5-bit adder for signal <cnt[4]_GND_27_o_add_47_OUT> created at line 169.
+    Found 5-bit adder for signal <cnt[4]_GND_27_o_add_50_OUT> created at line 175.
+    Found 4-bit adder for signal <_n0248> created at line 66.
+    Found 4-bit adder for signal <_n0249> created at line 66.
+    Found 4-bit adder for signal <_n0250> created at line 66.
+    Found 4-bit adder for signal <_n0251> created at line 66.
+    Found 4-bit adder for signal <BUS_0003_GND_27_o_add_7_OUT> created at line 66.
+    Found 4-bit adder for signal <_n0253> created at line 109.
+    Found 4-bit adder for signal <_n0254> created at line 109.
+    Found 4-bit adder for signal <_n0255> created at line 109.
+    Found 4-bit adder for signal <_n0256> created at line 109.
+    Found 4-bit adder for signal <BUS_0010_GND_27_o_add_20_OUT> created at line 109.
+    Found 5-bit adder for signal <cnt[4]_GND_27_o_sub_43_OUT> created at line 162.
+    Found 5-bit adder for signal <cnt[4]_GND_27_o_sub_41_OUT> created at line 162.
+    Found 4x10-bit Read Only RAM for signal <c1_reg_PWR_24_o_wide_mux_53_OUT>
+    Found 4-bit comparator greater for signal <GND_27_o_n1d[3]_LessThan_11_o> created at line 77
+    Found 4-bit comparator equal for signal <n1q_m[3]_n0q_m[3]_equal_33_o> created at line 121
+    Found 4-bit comparator greater for signal <n0q_m[3]_n1q_m[3]_LessThan_34_o> created at line 125
+    Found 4-bit comparator greater for signal <n1q_m[3]_n0q_m[3]_LessThan_35_o> created at line 125
+    Summary:
+	inferred   1 RAM(s).
+	inferred  23 Adder/Subtractor(s).
+	inferred  50 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred  37 Multiplexer(s).
+Unit <encode> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 16x4-bit single-port Read Only RAM                    : 2
+ 4x10-bit single-port Read Only RAM                    : 3
+# Adders/Subtractors                                   : 74
+ 11-bit adder                                          : 1
+ 12-bit adder                                          : 3
+ 13-bit adder                                          : 1
+ 2-bit adder                                           : 6
+ 3-bit adder                                           : 6
+ 4-bit adder                                           : 30
+ 4-bit subtractor                                      : 3
+ 5-bit adder                                           : 15
+ 5-bit subtractor                                      : 9
+# Registers                                            : 54
+ 1-bit register                                        : 18
+ 10-bit register                                       : 3
+ 11-bit register                                       : 2
+ 12-bit register                                       : 3
+ 2-bit register                                        : 3
+ 4-bit register                                        : 9
+ 5-bit register                                        : 4
+ 8-bit register                                        : 9
+ 9-bit register                                        : 3
+# Comparators                                          : 24
+ 11-bit comparator greater                             : 3
+ 11-bit comparator lessequal                           : 4
+ 12-bit comparator equal                               : 1
+ 12-bit comparator greater                             : 3
+ 12-bit comparator lessequal                           : 1
+ 4-bit comparator equal                                : 3
+ 4-bit comparator greater                              : 9
+# Multiplexers                                         : 131
+ 1-bit 2-to-1 multiplexer                              : 99
+ 10-bit 2-to-1 multiplexer                             : 3
+ 11-bit 2-to-1 multiplexer                             : 2
+ 12-bit 2-to-1 multiplexer                             : 2
+ 15-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 12
+ 8-bit 2-to-1 multiplexer                              : 12
+# Xors                                                 : 42
+ 1-bit xor2                                            : 42
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <r_out_0> in Unit <vg_gen> is equivalent to the following 7 FFs/Latches, which will be removed : <r_out_1> <r_out_2> <r_out_3> <r_out_4> <r_out_5> <r_out_6> <r_out_7> 
+INFO:Xst:2261 - The FF/Latch <tmdsclkint_0> in Unit <tmds_tx_0> is equivalent to the following 4 FFs/Latches, which will be removed : <tmdsclkint_1> <tmdsclkint_2> <tmdsclkint_3> <tmdsclkint_4> 
+WARNING:Xst:1710 - FF/Latch <c1_q> (without init value) has a constant value of 0 in block <encode_g>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <c0_q> (without init value) has a constant value of 0 in block <encode_g>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <c1_q> (without init value) has a constant value of 0 in block <encode_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <c0_q> (without init value) has a constant value of 0 in block <encode_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <c0_reg> (without init value) has a constant value of 0 in block <encode_g>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <c1_reg> (without init value) has a constant value of 0 in block <encode_g>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <c0_reg> (without init value) has a constant value of 0 in block <encode_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <c1_reg> (without init value) has a constant value of 0 in block <encode_r>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <convert_30to15_fifo>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_wa_d> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <wa>            |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <wa_d>          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ra_d> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <ra>            |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <ra_d>          |          |
+    -----------------------------------------------------------------------
+Unit <convert_30to15_fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <encode>.
+	The following adders/subtractors are grouped into adder tree <Madd_BUS_0010_GND_27_o_add_20_OUT_Madd1> :
+ 	<Madd__n0253> in block <encode>, 	<Madd__n0254> in block <encode>, 	<Madd__n0256_Madd> in block <encode>, 	<Madd_n0204[1:0]> in block <encode>, 	<Madd_BUS_0010_GND_27_o_add_20_OUT_Madd> in block <encode>.
+	The following adders/subtractors are grouped into adder tree <Madd_BUS_0003_GND_27_o_add_7_OUT_Madd1> :
+ 	<Madd__n0248> in block <encode>, 	<Madd__n0249> in block <encode>, 	<Madd__n0251_Madd> in block <encode>, 	<Madd_n0183[1:0]> in block <encode>, 	<Madd_BUS_0003_GND_27_o_add_7_OUT_Madd> in block <encode>.
+INFO:Xst:3231 - The small RAM <Mram_c1_reg_PWR_24_o_wide_mux_53_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 10-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(c1_reg,c0_reg)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <dout> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_c1_reg_PWR_24_o_wide_mux_53_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+Unit <encode> synthesized (advanced).
+
+Synthesizing (advanced) Unit <video_generator>.
+The following registers are absorbed into counter <hpos>: 1 register on signal <hpos>.
+The following registers are absorbed into counter <vpos>: 1 register on signal <vpos>.
+The following registers are absorbed into counter <lpos>: 1 register on signal <lpos>.
+Unit <video_generator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 16x4-bit single-port distributed Read Only RAM        : 2
+ 4x10-bit single-port distributed Read Only RAM        : 3
+# Adders/Subtractors                                   : 29
+ 12-bit adder                                          : 1
+ 13-bit adder                                          : 1
+ 4-bit subtractor                                      : 3
+ 5-bit adder                                           : 15
+ 5-bit subtractor                                      : 9
+# Adder Trees                                          : 6
+ 4-bit / 6-inputs adder tree                           : 6
+# Counters                                             : 3
+ 11-bit up counter                                     : 1
+ 12-bit up counter                                     : 2
+# Registers                                            : 289
+ Flip-Flops                                            : 289
+# Comparators                                          : 24
+ 11-bit comparator greater                             : 3
+ 11-bit comparator lessequal                           : 4
+ 12-bit comparator equal                               : 1
+ 12-bit comparator greater                             : 3
+ 12-bit comparator lessequal                           : 1
+ 4-bit comparator equal                                : 3
+ 4-bit comparator greater                              : 9
+# Multiplexers                                         : 129
+ 1-bit 2-to-1 multiplexer                              : 99
+ 10-bit 2-to-1 multiplexer                             : 3
+ 11-bit 2-to-1 multiplexer                             : 1
+ 12-bit 2-to-1 multiplexer                             : 1
+ 15-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 12
+ 8-bit 2-to-1 multiplexer                              : 12
+# Xors                                                 : 42
+ 1-bit xor2                                            : 42
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <r_out_0> in Unit <video_generator> is equivalent to the following 7 FFs/Latches, which will be removed : <r_out_1> <r_out_2> <r_out_3> <r_out_4> <r_out_5> <r_out_6> <r_out_7> 
+INFO:Xst:2261 - The FF/Latch <tmdsclkint_0> in Unit <tmds_tx> is equivalent to the following 4 FFs/Latches, which will be removed : <tmdsclkint_1> <tmdsclkint_2> <tmdsclkint_3> <tmdsclkint_4> 
+INFO:Xst:1901 - Instance pll_base_oserdes in unit pll_base_oserdes of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <colorbar_generator> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
+INFO:Xst:2261 - The FF/Latch <green_0> in Unit <colorbar_generator> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
+INFO:Xst:2261 - The FF/Latch <red_0> in Unit <colorbar_generator> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
+INFO:Xst:2261 - The FF/Latch <g_out_0> in Unit <video_generator> is equivalent to the following 15 FFs/Latches, which will be removed : <g_out_1> <g_out_2> <g_out_3> <g_out_4> <g_out_5> <g_out_6> <g_out_7> <b_out_0> <b_out_1> <b_out_2> <b_out_3> <b_out_4> <b_out_5> <b_out_6> <b_out_7> 
+INFO:Xst:2261 - The FF/Latch <n1q_m_0> in Unit <encode> is equivalent to the following FF/Latch, which will be removed : <n0q_m_0> 
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n1q_m_0> is unconnected in block <encode>.
+
+Optimizing unit <DRAM16XN> ...
+
+Optimizing unit <main> ...
+
+Optimizing unit <colorbar_generator> ...
+
+Optimizing unit <video_generator> ...
+
+Optimizing unit <tmds_tx> ...
+
+Optimizing unit <encode> ...
+WARNING:Xst:1710 - FF/Latch <cnt_0> (without init value) has a constant value of 0 in block <encode>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <convert_30to15_fifo> ...
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_r/c1_q> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_r/c0_q> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_g/c1_q> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_g/c0_q> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmds_tx_0/encode_r/c1_reg> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmds_tx_0/encode_r/c0_reg> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmds_tx_0/encode_g/c1_reg> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmds_tx_0/encode_g/c0_reg> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_r/n1d_2> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_r/n1d_1> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_r/n1d_0> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_g/n1d_2> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_g/n1d_1> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_g/n1d_0> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_b/n1d_2> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_b/n1d_1> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmds_tx_0/encode_b/n1d_0> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/n1d_3> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_r/din_q_7> <tmds_tx_0/encode_r/din_q_6> <tmds_tx_0/encode_r/din_q_5> <tmds_tx_0/encode_r/din_q_4> <tmds_tx_0/encode_r/din_q_3> <tmds_tx_0/encode_r/din_q_2> <tmds_tx_0/encode_r/din_q_1> <tmds_tx_0/encode_r/din_q_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_b/n1q_m_3> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_b/q_m_reg_7> <tmds_tx_0/encode_b/q_m_reg_6> <tmds_tx_0/encode_b/q_m_reg_5> <tmds_tx_0/encode_b/q_m_reg_4> <tmds_tx_0/encode_b/q_m_reg_3> <tmds_tx_0/encode_b/q_m_reg_2> <tmds_tx_0/encode_b/q_m_reg_1> <tmds_tx_0/encode_b/q_m_reg_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/n0q_m_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <tmds_tx_0/encode_r/q_m_reg_8> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/n1q_m_3> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_r/q_m_reg_7> <tmds_tx_0/encode_r/q_m_reg_6> <tmds_tx_0/encode_r/q_m_reg_5> <tmds_tx_0/encode_r/q_m_reg_4> <tmds_tx_0/encode_r/q_m_reg_3> <tmds_tx_0/encode_r/q_m_reg_2> <tmds_tx_0/encode_r/q_m_reg_1> <tmds_tx_0/encode_r/q_m_reg_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_g/n1d_3> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_g/din_q_7> <tmds_tx_0/encode_g/din_q_6> <tmds_tx_0/encode_g/din_q_5> <tmds_tx_0/encode_g/din_q_4> <tmds_tx_0/encode_g/din_q_3> <tmds_tx_0/encode_g/din_q_2> <tmds_tx_0/encode_g/din_q_1> <tmds_tx_0/encode_g/din_q_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_g/n0q_m_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <tmds_tx_0/encode_g/q_m_reg_8> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_b/n1d_3> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_b/din_q_7> <tmds_tx_0/encode_b/din_q_6> <tmds_tx_0/encode_b/din_q_5> <tmds_tx_0/encode_b/din_q_4> <tmds_tx_0/encode_b/din_q_3> <tmds_tx_0/encode_b/din_q_2> <tmds_tx_0/encode_b/din_q_1> <tmds_tx_0/encode_b/din_q_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/de_q> in Unit <main> is equivalent to the following 2 FFs/Latches, which will be removed : <tmds_tx_0/encode_g/de_q> <tmds_tx_0/encode_b/de_q> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_b/n0q_m_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <tmds_tx_0/encode_b/q_m_reg_8> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_g/n1q_m_3> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_g/q_m_reg_7> <tmds_tx_0/encode_g/q_m_reg_6> <tmds_tx_0/encode_g/q_m_reg_5> <tmds_tx_0/encode_g/q_m_reg_4> <tmds_tx_0/encode_g/q_m_reg_3> <tmds_tx_0/encode_g/q_m_reg_2> <tmds_tx_0/encode_g/q_m_reg_1> <tmds_tx_0/encode_g/q_m_reg_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/de_reg> in Unit <main> is equivalent to the following 2 FFs/Latches, which will be removed : <tmds_tx_0/encode_g/de_reg> <tmds_tx_0/encode_b/de_reg> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_b/dout_7> in Unit <main> is equivalent to the following 4 FFs/Latches, which will be removed : <tmds_tx_0/encode_b/dout_5> <tmds_tx_0/encode_b/dout_3> <tmds_tx_0/encode_b/dout_1> <tmds_tx_0/encode_b/dout_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_g/dout_7> in Unit <main> is equivalent to the following 4 FFs/Latches, which will be removed : <tmds_tx_0/encode_g/dout_5> <tmds_tx_0/encode_g/dout_3> <tmds_tx_0/encode_g/dout_1> <tmds_tx_0/encode_g/dout_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_b/dout_6> in Unit <main> is equivalent to the following 2 FFs/Latches, which will be removed : <tmds_tx_0/encode_b/dout_4> <tmds_tx_0/encode_b/dout_2> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_g/dout_6> in Unit <main> is equivalent to the following 2 FFs/Latches, which will be removed : <tmds_tx_0/encode_g/dout_4> <tmds_tx_0/encode_g/dout_2> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/dout_7> in Unit <main> is equivalent to the following 4 FFs/Latches, which will be removed : <tmds_tx_0/encode_r/dout_5> <tmds_tx_0/encode_r/dout_3> <tmds_tx_0/encode_r/dout_1> <tmds_tx_0/encode_r/dout_0> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/dout_6> in Unit <main> is equivalent to the following 2 FFs/Latches, which will be removed : <tmds_tx_0/encode_r/dout_4> <tmds_tx_0/encode_r/dout_2> 
+INFO:Xst:2261 - The FF/Latch <tmds_tx_0/encode_r/n0q_m_1> in Unit <main> is equivalent to the following 8 FFs/Latches, which will be removed : <tmds_tx_0/encode_r/n1q_m_2> <tmds_tx_0/encode_r/n1q_m_1> <tmds_tx_0/encode_g/n0q_m_1> <tmds_tx_0/encode_g/n1q_m_2> <tmds_tx_0/encode_g/n1q_m_1> <tmds_tx_0/encode_b/n0q_m_1> <tmds_tx_0/encode_b/n1q_m_2> <tmds_tx_0/encode_b/n1q_m_1> 
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[27].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[25].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[27].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[13].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[27].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[11].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[27].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[10].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[26].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[14].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[26].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[12].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[22].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[20].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[22].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[8].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[22].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[6].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[22].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[5].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[21].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[9].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[21].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[7].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[17].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[15].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[17].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[3].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[17].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[1].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[17].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[0].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[16].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[4].i_RAM16X1D_U> are equivalent
+WARNING:Xst:2398 - RAMs <tmds_tx_0/converter/fifo_u/dram16s[16].i_RAM16X1D_U>, <tmds_tx_0/converter/fifo_u/dram16s[2].i_RAM16X1D_U> are equivalent
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 1.
+
+Final Macro Processing ...
+
+Processing Unit <main> :
+	Found 2-bit shift register for signal <tmds_tx_0/encode_b/c1_reg>.
+	Found 2-bit shift register for signal <tmds_tx_0/encode_b/c0_reg>.
+Unit <main> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 162
+ Flip-Flops                                            : 162
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 342
+#      GND                         : 1
+#      INV                         : 12
+#      LUT1                        : 36
+#      LUT2                        : 10
+#      LUT3                        : 35
+#      LUT4                        : 39
+#      LUT5                        : 25
+#      LUT6                        : 91
+#      MUXCY                       : 44
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 47
+# FlipFlops/Latches                : 164
+#      FD                          : 42
+#      FDC                         : 56
+#      FDCE                        : 24
+#      FDE                         : 32
+#      FDP                         : 4
+#      FDPE                        : 1
+#      FDR                         : 1
+#      FDRE                        : 4
+# RAMS                             : 30
+#      RAM16X1D                    : 30
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 4
+#      BUFG                        : 4
+# IO Buffers                       : 11
+#      IBUF                        : 2
+#      IBUFG                       : 1
+#      OBUF                        : 4
+#      OBUFDS                      : 4
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# Others                           : 10
+#      BUFPLL                      : 1
+#      OSERDES2                    : 8
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             164  out of  54576     0%  
+ Number of Slice LUTs:                  310  out of  27288     1%  
+    Number used as Logic:               248  out of  27288     0%  
+    Number used as Memory:               62  out of   6408     0%  
+       Number used as RAM:               60
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    349
+   Number with an unused Flip Flop:     185  out of    349    53%  
+   Number with an unused LUT:            39  out of    349    11%  
+   Number of fully used LUT-FF pairs:   125  out of    349    35%  
+   Number of unique control sets:        12
+
+IO Utilization: 
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    218     6%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
+ Number of PLL_ADVs:                      1  out of      4    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLOCK_100M                         | DCM_SP:CLKFX+BUFG      | 141   |
+tmds_tx_0/pll_base_oserdes/CLKOUT2 | BUFG                   | 55    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 7.549ns (Maximum Frequency: 132.474MHz)
+   Minimum input arrival time before clock: 5.889ns
+   Maximum output required time after clock: 4.521ns
+   Maximum combinational path delay: 5.663ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLOCK_100M'
+  Clock period: 7.549ns (frequency: 132.474MHz)
+  Total number of paths / destination ports: 4368 / 286
+-------------------------------------------------------------------------
+Delay:               5.032ns (Levels of Logic = 4)
+  Source:            vg_gen/hpos_9 (FF)
+  Destination:       vg_gen/lpos_11 (FF)
+  Source Clock:      CLOCK_100M rising 1.5X
+  Destination Clock: CLOCK_100M rising 1.5X
+
+  Data Path: vg_gen/hpos_9 to vg_gen/lpos_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.447   0.943  vg_gen/hpos_9 (vg_gen/hpos_9)
+     LUT3:I0->O            1   0.205   0.580  vg_gen/GND_9_o_GND_9_o_equal_23_o<11>1_SW0 (N12)
+     LUT6:I5->O           17   0.205   1.132  vg_gen/GND_9_o_GND_9_o_equal_23_o<11>1 (vg_gen/GND_9_o_GND_9_o_equal_23_o<11>1)
+     LUT6:I4->O           12   0.203   1.013  vg_gen/_n013611 (vg_gen/_n01361)
+     LUT4:I2->O            1   0.203   0.000  vg_gen/lpos_11_rstpot (vg_gen/lpos_11_rstpot)
+     FD:D                      0.102          vg_gen/lpos_11
+    ----------------------------------------
+    Total                      5.032ns (1.365ns logic, 3.667ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'tmds_tx_0/pll_base_oserdes/CLKOUT2'
+  Clock period: 2.881ns (frequency: 347.120MHz)
+  Total number of paths / destination ports: 219 / 93
+-------------------------------------------------------------------------
+Delay:               2.881ns (Levels of Logic = 1)
+  Source:            tmds_tx_0/converter/sync_gen (FF)
+  Destination:       tmds_tx_0/converter/sync_gen (FF)
+  Source Clock:      tmds_tx_0/pll_base_oserdes/CLKOUT2 rising
+  Destination Clock: tmds_tx_0/pll_base_oserdes/CLKOUT2 rising
+
+  Data Path: tmds_tx_0/converter/sync_gen to tmds_tx_0/converter/sync_gen
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             50   0.447   1.547  tmds_tx_0/converter/sync_gen (tmds_tx_0/converter/sync)
+     INV:I->O              1   0.206   0.579  tmds_tx_0/converter/sync_INV_7_o1_INV_0 (tmds_tx_0/converter/sync_INV_7_o)
+     FDR:D                     0.102          tmds_tx_0/converter/sync_gen
+    ----------------------------------------
+    Total                      2.881ns (0.755ns logic, 2.126ns route)
+                                       (26.2% logic, 73.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK_100M'
+  Total number of paths / destination ports: 115 / 102
+-------------------------------------------------------------------------
+Offset:              5.889ns (Levels of Logic = 4)
+  Source:            RESET (PAD)
+  Destination:       vg_gen/lpos_11 (FF)
+  Destination Clock: CLOCK_100M rising 1.5X
+
+  Data Path: RESET to vg_gen/lpos_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            99   1.222   2.235  RESET_IBUF (RESET_IBUF)
+     LUT6:I0->O            1   0.203   0.808  vg_gen/_n01363_SW0 (N79)
+     LUT6:I3->O           12   0.205   0.909  vg_gen/_n01363 (vg_gen/_n0136)
+     LUT4:I3->O            1   0.205   0.000  vg_gen/lpos_11_rstpot (vg_gen/lpos_11_rstpot)
+     FD:D                      0.102          vg_gen/lpos_11
+    ----------------------------------------
+    Total                      5.889ns (1.937ns logic, 3.952ns route)
+                                       (32.9% logic, 67.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tmds_tx_0/pll_base_oserdes/CLKOUT2'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              3.522ns (Levels of Logic = 1)
+  Source:            RESET (PAD)
+  Destination:       tmds_tx_0/clk_toggle (FF)
+  Destination Clock: tmds_tx_0/pll_base_oserdes/CLKOUT2 rising
+
+  Data Path: RESET to tmds_tx_0/clk_toggle
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            99   1.222   1.870  RESET_IBUF (RESET_IBUF)
+     FDC:CLR                   0.430          tmds_tx_0/clk_toggle
+    ----------------------------------------
+    Total                      3.522ns (1.652ns logic, 1.870ns route)
+                                       (46.9% logic, 53.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_100M'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              4.521ns (Levels of Logic = 2)
+  Source:            clr_gen/hsync (FF)
+  Destination:       LED<1> (PAD)
+  Source Clock:      CLOCK_100M rising 1.5X
+
+  Data Path: clr_gen/hsync to LED<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              1   0.447   0.684  clr_gen/hsync (clr_gen/hsync)
+     LUT3:I1->O            2   0.203   0.616  Mmux_v_hsync11 (v_hsync)
+     OBUF:I->O                 2.571          LED_1_OBUF (LED<1>)
+    ----------------------------------------
+    Total                      4.521ns (3.221ns logic, 1.300ns route)
+                                       (71.2% logic, 28.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'tmds_tx_0/pll_base_oserdes/CLKOUT2'
+  Total number of paths / destination ports: 20 / 20
+-------------------------------------------------------------------------
+Offset:              1.161ns (Levels of Logic = 0)
+  Source:            tmds_tx_0/tmdsclkint_0 (FF)
+  Destination:       tmds_tx_0/serdes_clk/oserdes_m:D1 (PAD)
+  Source Clock:      tmds_tx_0/pll_base_oserdes/CLKOUT2 rising
+
+  Data Path: tmds_tx_0/tmdsclkint_0 to tmds_tx_0/serdes_clk/oserdes_m:D1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.447   0.714  tmds_tx_0/tmdsclkint_0 (tmds_tx_0/tmdsclkint_0)
+    OSERDES2:D1                0.000          tmds_tx_0/serdes_clk/oserdes_s
+    ----------------------------------------
+    Total                      1.161ns (0.447ns logic, 0.714ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 52 / 52
+-------------------------------------------------------------------------
+Delay:               5.663ns (Levels of Logic = 2)
+  Source:            RESET (PAD)
+  Destination:       LED<2> (PAD)
+
+  Data Path: RESET to LED<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            99   1.222   1.870  RESET_IBUF (RESET_IBUF)
+     OBUF:I->O                 2.571          LED_2_OBUF (LED<2>)
+    ----------------------------------------
+    Total                      5.663ns (3.793ns logic, 1.870ns route)
+                                       (67.0% logic, 33.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLOCK_100M
+----------------------------------+---------+---------+---------+---------+
+                                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------+---------+---------+---------+---------+
+CLOCK_100M                        |    5.032|         |         |         |
+tmds_tx_0/pll_base_oserdes/CLKOUT2|    1.767|         |         |         |
+----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock tmds_tx_0/pll_base_oserdes/CLKOUT2
+----------------------------------+---------+---------+---------+---------+
+                                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------+---------+---------+---------+---------+
+CLOCK_100M                        |    1.671|         |         |         |
+tmds_tx_0/pll_base_oserdes/CLKOUT2|    2.881|         |         |         |
+----------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 10.53 secs
+ 
+--> 
+
+
+Total memory usage is 395044 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   55 (   0 filtered)
+Number of infos    :   33 (   0 filtered)
+
