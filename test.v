@@ -1,36 +1,26 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    08:38:39 05/11/2015 
-// Design Name: 
-// Module Name:    test 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module test(
 	input wire CLK
 );
 
+parameter AA = 5/3;
+
 reg a = 1'b0;
 reg b = 1'b0;
+reg c = 1'b0;
+
+always @ (posedge CLK) begin
+	if (a) begin
+		c <= 1'b1;
+	end
+end
 
 always @ (posedge CLK) begin
 	a = 1'b1;
-	if (a == 1'b1) begin
-		a = 1'b0;
-		b = 1'b1;
-	end
+	/*if (!a) begin*/
+		/*a <= 1'b0;*/
+	/*end*/
 end
 
 endmodule

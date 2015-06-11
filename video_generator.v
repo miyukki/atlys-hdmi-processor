@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+/*`timescale 1ns / 1ps
 
 module video_generator #(
   parameter TRUE = 1'b1,
@@ -127,6 +127,114 @@ always @(posedge rst or posedge clk or posedge rst) begin
           lpos <= 0;
         end
       end
+    end
+  end
+end
+
+endmodule*/
+
+module video_generator #(
+  parameter TRUE = 1'b1,
+  parameter FALSE = 1'b0,
+
+  // 1080p @ 60fps
+  parameter H_ACTIVE_PIXEL = 12'd1920,
+  parameter H_FPORCH_PIXEL = 12'd88,
+  parameter H_SYNC_PIXEL   = 12'd44,
+  parameter H_BPORCH_PIXEL = 12'd148,
+  parameter H_LIMIT_PIXEL  = H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL + H_BPORCH_PIXEL,
+
+  parameter V_ACTIVE_LINE  = 11'd1080,
+  parameter V_FPORCH_LINE  = 11'd4,
+  parameter V_SYNC_LINE    = 11'd5,
+  parameter V_BPORCH_LINE  = 11'd36,
+  parameter V_LIMIT_LINE   = V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE + V_BPORCH_LINE
+) (
+  input  wire       rst,
+  input  wire       clk,
+  output reg        hsync,
+  output reg        vsync,
+  output reg        de,
+  output reg  [7:0] blue  = 8'b0,
+  output reg  [7:0] green = 8'b0,
+  output reg  [7:0] red   = 8'b0
+);
+
+reg [11:0] lpos = 12'b0;
+reg [11:0] hpos = 12'd0;
+reg [10:0] vpos = 11'd0;
+
+/////////////////////////////////////
+// TIMINGS
+/////////////////////////////////////
+
+always @(posedge rst or negedge clk) begin
+  if (rst) begin
+    hpos  <= 0;
+    vpos  <= 0;
+  end
+  else begin
+    // Counter
+    hpos <= hpos + 1;
+    if (hpos + 1 == H_LIMIT_PIXEL) begin
+      hpos <= 0;
+      vpos <= vpos + 1;
+      if (vpos + 1 == V_LIMIT_LINE) begin
+        vpos <= 0;
+        lpos <= lpos + 1;
+        if (lpos + 1 == H_ACTIVE_PIXEL) begin
+          lpos <= 0;
+        end
+      end
+    end
+  end
+end
+
+/////////////////////////////////////
+// SYNC GENERATOR
+/////////////////////////////////////
+
+always @(posedge rst or posedge clk) begin
+  if (rst) begin
+    hsync <= FALSE;
+    vsync <= FALSE;
+    de    <= FALSE;
+  end
+  else begin
+    hsync <= hpos < H_ACTIVE_PIXEL + H_FPORCH_PIXEL || H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL <= hpos;
+    vsync <= vpos < V_ACTIVE_LINE  + V_FPORCH_LINE  || V_ACTIVE_LINE  + V_FPORCH_LINE  + V_SYNC_LINE  <= vpos;
+    de    <= hpos < H_ACTIVE_PIXEL && vpos < V_ACTIVE_LINE;
+  end
+end
+
+/////////////////////////////////////
+// VIDEO GENERATOR
+/////////////////////////////////////
+
+always @(posedge rst or posedge clk) begin
+  if (rst) begin
+    red   <= 8'b0;
+    green <= 8'b0;
+    blue  <= 8'b0;
+  end
+  else begin
+    // Active video
+    if (hpos < H_ACTIVE_PIXEL && vpos < V_ACTIVE_LINE) begin
+      if (hpos == lpos) begin
+        red   <= 8'b11111111;
+        green <= 8'b11111111;
+        blue  <= 8'b11111111;
+      end
+      else begin
+        red   <= 8'b11111111;
+        green <= 8'b0;
+        blue  <= 8'b0;
+      end
+    end
+    else begin
+      red   <= 8'b0;
+      green <= 8'b0;
+      blue  <= 8'b0;
     end
   end
 end

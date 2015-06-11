@@ -27,6 +27,8 @@ module main #(
   input  wire       RESET,
   input  wire       CLOCK_100M,
   input  wire       SW,
+  input  wire       UART_RX,
+  output wire       UART_TX,
 
   // input  wire [3:0] RX0_TMDS,
   // input  wire [3:0] RX0_TMDSB,
@@ -36,6 +38,19 @@ module main #(
   output wire [3:0] TX0_TMDS,
   output wire [3:0] TX0_TMDSB,
   output wire [3:0] LED
+);
+
+/////////////////////////////////////
+// SERIAL
+/////////////////////////////////////
+
+serial #(
+  .RATE(9600)
+) serial_0 (
+  .rst(RESET),
+  .clk(CLOCK_100M),
+  .rx(UART_RX),
+  .tx(UART_TX)
 );
 
 /////////////////////////////////////

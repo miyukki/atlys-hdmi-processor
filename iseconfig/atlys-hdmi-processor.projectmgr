@@ -13,7 +13,7 @@
       <SelectedItems>
          <SelectedItem>main (/media/psf/Home/Develop/atlys-hdmi-processor/main.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d3000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d30000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -91,7 +91,7 @@
       <SelectedItems>
          <SelectedItem>Configure Target Device</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000117000000010000000100000000000000000000000064ffffffff000000810000000000000001000001170000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
@@ -130,7 +130,7 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode>/main |media|psf|Home|Develop|atlys-hdmi-processor|main.v/tmds_tx_0 - tmds_tx</ClosedNode>
+         <ClosedNode>/main |media|psf|Home|Develop|atlys-hdmi-processor|main.v/tmds_tx_0 - tmds_tx/converter - convert_30to15_fifo</ClosedNode>
          <ClosedNode>/main |media|psf|Home|Develop|atlys-hdmi-processor|main.v/tmds_tx_0 - tmds_tx/serialize_b - serialize</ClosedNode>
          <ClosedNode>/main |media|psf|Home|Develop|atlys-hdmi-processor|main.v/tmds_tx_0 - tmds_tx/serialize_g - serialize</ClosedNode>
          <ClosedNode>/main |media|psf|Home|Develop|atlys-hdmi-processor|main.v/tmds_tx_0 - tmds_tx/serialize_r - serialize</ClosedNode>
@@ -138,13 +138,13 @@
          <ClosedNode>/video_generator |media|psf|Home|Develop|atlys-hdmi-processor|video_generator.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>main (/media/psf/Home/Develop/atlys-hdmi-processor/main.v)</SelectedItem>
+         <SelectedItem>clr_gen - colorbar_generator (/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000179000000020000000000000000000000000200000064ffffffff000000810000000300000002000001790000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>main (/media/psf/Home/Develop/atlys-hdmi-processor/main.v)</CurrentItem>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d3000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d30000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>clr_gen - colorbar_generator (/media/psf/Home/Develop/atlys-hdmi-processor/colorbar_generator.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

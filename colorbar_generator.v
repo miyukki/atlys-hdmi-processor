@@ -59,30 +59,46 @@ module colorbar_generator #(
   parameter FALSE = 1'b0,
 
   // 1080p @ 60fps
-  parameter H_ACTIVE_PIXEL = 1920,
-  parameter H_FPORCH_PIXEL = 67,
-  parameter H_SYNC_PIXEL   = 75,
-  parameter H_BPORCH_PIXEL = 205,
+  parameter H_ACTIVE_PIXEL = 12'd1920,
+  parameter H_FPORCH_PIXEL = 12'd88,
+  parameter H_SYNC_PIXEL   = 12'd44,
+  parameter H_BPORCH_PIXEL = 12'd148,
+  // parameter H_FPORCH_PIXEL = 12'd67,
+  // parameter H_SYNC_PIXEL   = 12'd75,
+  // parameter H_BPORCH_PIXEL = 12'd205,
   parameter H_LIMIT_PIXEL  = H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL + H_BPORCH_PIXEL,
+  /*parameter H_INIT_PIXEL   = H_LIMIT_PIXEL - 1,*/
 
-  parameter V_ACTIVE_LINE  = 1080,
-  parameter V_FPORCH_LINE  = 3,
-  parameter V_SYNC_LINE    = 5,
-  parameter V_BPORCH_LINE  = 16,
+  parameter V_ACTIVE_LINE  = 11'd1080,
+  parameter V_FPORCH_LINE  = 11'd4,
+  parameter V_SYNC_LINE    = 11'd5,
+  parameter V_BPORCH_LINE  = 11'd36,
+  // parameter V_FPORCH_LINE  = 12'd3,
+  // parameter V_SYNC_LINE    = 12'd5,
+  // parameter V_BPORCH_LINE  = 12'd16,
   parameter V_LIMIT_LINE   = V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE + V_BPORCH_LINE
+  /*parameter V_INIT_LINE    = V_LIMIT_LINE - 1*/
 ) (
   input  wire       rst,
   input  wire       clk,
-  output reg        hsync = TRUE,
-  output reg        vsync = TRUE,
-  output reg        de    = TRUE,
+  output reg        hsync,
+  output reg        vsync,
+  output reg        de,
   output reg  [7:0] blue  = 8'b0,
   output reg  [7:0] green = 8'b0,
   output reg  [7:0] red   = 8'b0
 );
 
-reg [11:0] hpos = 12'b0;
-reg [10:0] vpos = 11'b0;
+reg [11:0] hpos = 12'd0;
+reg [10:0] vpos = 11'd0;
+
+/*reg [11:0] hpos = 12'd1910;
+reg [10:0] vpos = 11'd1070;*/
+
+/*
+assign hsync = hpos < H_ACTIVE_PIXEL + H_FPORCH_PIXEL || H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL <= hpos;
+assign vsync = vpos < V_ACTIVE_LINE  + V_FPORCH_LINE  || V_ACTIVE_LINE  + V_FPORCH_LINE  + V_SYNC_LINE  <= vpos;
+assign de    = hpos < H_ACTIVE_PIXEL && vpos < V_ACTIVE_LINE;*/
 
 /*reg       hsync = TRUE;
 reg       vsync = TRUE;
@@ -111,8 +127,8 @@ parameter LVL_4     = 8'd10;
 parameter LVL_2     = 8'd5;
 parameter LVL_0     = 8'd0;
 
-/*parameter H_PART_LINE_1 = H_ACTIVE_PIXEL / 8;*/
-/*parameter H_PART_LINE_2 = H_PART_LINE_1 + ;*/
+parameter H_PART_LINE_1 = H_ACTIVE_PIXEL / 8;
+parameter H_PART_LINE_2 = H_PART_LINE_1 + H_ACTIVE_PIXEL * 3 / 7;
 
 parameter V_PART_LINE_1 = (V_ACTIVE_LINE / 12) * 7;
 parameter V_PART_LINE_2 = V_PART_LINE_1 + V_ACTIVE_LINE / 12;
@@ -166,6 +182,45 @@ wire hbar17bgn = (hdtype) ? 12'd 1405 : 12'd937;*/
 end*/
 
 /////////////////////////////////////
+// TIMINGS
+/////////////////////////////////////
+
+always @(posedge rst or negedge clk) begin
+  if (rst) begin
+    hpos  <= 0;
+    vpos  <= 0;
+  end
+  else begin
+    // Counter
+    hpos <= hpos + 1;
+    if (hpos + 1 == H_LIMIT_PIXEL) begin
+      hpos <= 0;
+      vpos <= vpos + 1;
+      if (vpos + 1 == V_LIMIT_LINE) begin
+        vpos <= 0;
+      end
+    end
+  end
+end
+
+/////////////////////////////////////
+// SYNC GENERATOR
+/////////////////////////////////////
+
+always @(posedge rst or posedge clk) begin
+  if (rst) begin
+    hsync <= FALSE;
+    vsync <= FALSE;
+    de    <= FALSE;
+  end
+  else begin
+    hsync <= hpos < H_ACTIVE_PIXEL + H_FPORCH_PIXEL || H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL <= hpos;
+    vsync <= vpos < V_ACTIVE_LINE  + V_FPORCH_LINE  || V_ACTIVE_LINE  + V_FPORCH_LINE  + V_SYNC_LINE  <= vpos;
+    de    <= hpos < H_ACTIVE_PIXEL && vpos < V_ACTIVE_LINE;
+  end
+end
+
+/////////////////////////////////////
 // VIDEO GENERATOR
 /////////////////////////////////////
 
@@ -177,101 +232,32 @@ always @(posedge rst or posedge clk) begin
   end
   else begin
     // Active video
-    if (hpos <= H_ACTIVE_PIXEL || vpos <= V_ACTIVE_LINE) begin
-      red   <= 8'b0;
-      green <= 8'b0;
-      blue  <= 8'b0;
-    end
-    else begin
-      if (vpos <= V_PART_LINE_1) begin
+    if (hpos < H_ACTIVE_PIXEL && vpos < V_ACTIVE_LINE) begin
+      if (vpos < V_PART_LINE_1) begin
         red   <= 8'b11111111;
         green <= 8'b11111111;
         blue  <= 8'b0;
       end
-      else if (vpos <= V_PART_LINE_2) begin
+      else if (vpos < V_PART_LINE_2) begin
         red   <= 8'b11111111;
         green <= 8'b11111111;
         blue  <= 8'b11111111;
       end
-      else if (vpos <= V_PART_LINE_3) begin
+      else if (vpos < V_PART_LINE_3) begin
         red   <= 8'b0;
         green <= 8'b11111111;
         blue  <= 8'b11111111;
       end
       else begin
-        red   <= 8'b0;
+        red   <= 8'b11111111;
         green <= 8'b0;
-        blue  <= 8'b0;
+        blue  <= 8'b11111111;
       end
     end
-  end
-end
-
-/////////////////////////////////////
-// TIMINGS
-/////////////////////////////////////
-
-always @(posedge rst or posedge clk) begin
-  if (rst) begin
-    hpos  <= 0;
-    vpos  <= 0;
-    hsync <= TRUE;
-    vsync <= TRUE;
-    de    <= TRUE;
-  end
-  else begin
-    // Data enable 
-    if (H_ACTIVE_PIXEL < hpos || V_ACTIVE_LINE < vpos) begin
-      de    <= FALSE;
-    end
     else begin
-      de    <= TRUE;
-    end
-    /*if (hpos == H_ACTIVE_PIXEL || vpos == V_ACTIVE_LINE) begin
-      de <= FALSE;
-    end
-    else if (hpos < H_ACTIVE_PIXEL && vpos < V_ACTIVE_LINE) begin
-      de <= TRUE;
-    end*/
-
-    // Horizontal sync
-    /*if (hpos == H_ACTIVE_PIXEL + H_FPORCH_PIXEL) begin
-      hsync <= FALSE;
-    end
-    if (hpos == H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL) begin
-      hsync <= TRUE;
-    end*/
-    if (H_ACTIVE_PIXEL + H_FPORCH_PIXEL < hpos && hpos <= H_ACTIVE_PIXEL + H_FPORCH_PIXEL + H_SYNC_PIXEL) begin
-      hsync <= FALSE;
-    end
-    else begin
-      hsync <= TRUE;
-    end
-
-    // Vertical sync
-    /*if (vpos == V_ACTIVE_LINE + V_FPORCH_LINE) begin
-      vsync <= FALSE;
-    end
-    if (vpos == V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE) begin
-      vsync <= TRUE;
-    end*/
-
-    if (V_ACTIVE_LINE + V_FPORCH_LINE < vpos && vpos <= V_ACTIVE_LINE + V_FPORCH_LINE + V_SYNC_LINE) begin
-      vsync <= FALSE;
-    end
-    else begin
-      vsync <= TRUE;
-    end
-
-
-    // Counter
-    hpos <= hpos + 1;
-    if (hpos + 1 == H_LIMIT_PIXEL) begin
-      hpos <= 0;
-      vpos <= vpos + 1;
-      if (vpos + 1 == V_LIMIT_LINE) begin
-        vpos <= 0;
-      end
+      red   <= 8'b0;
+      green <= 8'b0;
+      blue  <= 8'b0;
     end
   end
 end
